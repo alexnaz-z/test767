@@ -1,0 +1,154 @@
+
+/* GENERAL SETTINGS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0b0b0f;
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* MOUSE FOLLOWING GLOW EFFECT */
+body::before {
+    content: "";
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(120, 80, 255, 0.18),
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: -1;
+    top: var(--mouse-y, 50%);
+    left: var(--mouse-x, 50%);
+    transform: translate(-50%, -50%);
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+.logo {
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+ul {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: white;
+}
+
+/* HOME PAGE */
+.hero {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+
+/* ABOUT AND CONTACT PAGES */
+.content {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+
+/* TEXT */
+.subtitle {
+    color: #9479ff;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(45px, 8vw, 85px);
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+h1 span {
+    color: #9479ff;
+}
+
+.description {
+    color: #999;
+    max-width: 550px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 35px;
+    background: #9479ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    color: #0b0b0f;
+    transform: translateY(-5px);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #555;
+    font-size: 12px;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    ul {
+        gap: 20px;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+}
